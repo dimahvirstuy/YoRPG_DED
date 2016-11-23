@@ -15,9 +15,13 @@ public class Pineapple extends Character{
 		this.defense *= 2;
 		this.attack /= 2;
     }
-	public String about(){
-		return "You are a pineapple, strong and wise. Your priority weapon is your stem.";
-	}
+
+    public void specialize () {
+    }
+
+    public String about(){
+	return "You are a pineapple, strong and wise. Your priority weapon is your stem.";
+    }
 
 
     public static void main(String[] args) {

@@ -10,12 +10,15 @@ public class Warrior extends Character{
 	strength = 100;
 	defense = 40;
 	attack = 0.4;}
-	public String about(){
-		return "You are a warrior, selfless and brave. Your priority weapon is a sword.";
-	}
+    public String about(){
+	return "You are a warrior, selfless and brave. Your priority weapon is a sword.";
+    }
     public void normalize(){
-		this.defense *= 2;
-		this.attack /= 2;
+	this.defense *= 2;
+	this.attack /= 2;
+    }
+
+    public void specialize () {
     }
 
     public static void main(String[] args) {

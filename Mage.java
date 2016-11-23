@@ -15,6 +15,9 @@ public class Mage extends Character{
 		return "You are a mage, intelligent and mysterious. Your priority weapon is a staff.";
 	}
 
+    public void specialize () {
+    }
+
     public void normalize(){
 	this.defense *= 2;
 	this.attack /= 2;

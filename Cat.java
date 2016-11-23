@@ -15,6 +15,10 @@ public class Cat extends Character{
 		this.defense *= 2;
 		this.attack /= 2;
     }
+
+    public void specialize() {
+    }
+
 	public String about(){
 		return "You are a cat, lazy and annoying. Your priority weapon is falling asleep and not doing anything.";
 	}
