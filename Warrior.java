@@ -11,6 +11,10 @@ public class Warrior extends Character{
 	defense = 40;
 	attack = 0.4;
 }
+    public void normalize(){
+	this.defense *= 2;
+	this.attack /= 2;
+    }
     public static void main(String[] args) {
         
     }

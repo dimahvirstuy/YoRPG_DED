@@ -11,6 +11,10 @@ public class Cat extends Character{
 	defense = 40;
 	attack = 0.1;
 }
+        public void normalize(){
+	this.defense *= 2;
+	this.attack /= 2;
+    }
 
     public static void main(String[] args) {
         

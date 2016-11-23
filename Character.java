@@ -3,7 +3,7 @@ APCS1 pd4
 HW #32: Ye Olde Role Playing Game, Expanded
 2016-20-16  
 */
-public class Character {
+public abstract class Character {
     protected String name;
     protected int health;
     protected int strength;
@@ -19,10 +19,7 @@ public class Character {
 	this.attack *= 2;
     }
     //normalizes the settings for warrior
-    public void normalize(){
-	this.defense *= 2;
-	this.attack /= 2;
-    }
+    public abstract void normalize();
     //checks if alive
     public boolean isAlive(){
 	return this.health>=1;
