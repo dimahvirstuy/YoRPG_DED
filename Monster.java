@@ -11,12 +11,18 @@ public class Monster extends Character{
 	defense = 20;
 	attack = 1;
 	}
-	public String about(){
-		return "A monster is terrifying and scary.";
-	}
+
+    public void normalize () {
+    }
+
+    public void specialize() {
+    }
+
+    public String about(){
+	return "Terrifying creatures created by the Demon King.";
+    }
 
     public static void main(String[] args) {
         
     }
-	}
-
+}
