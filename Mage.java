@@ -1,7 +1,7 @@
 /* You DED: Dasha, Edward, Dima
 APCS1 pd4
-HW #32: Ye Olde Role Playing Game, Expanded
-2016-20-16  
+HW #34: Ye Olde Role Playing Game, Unchained
+2016-22-16  
 */
 public class Mage extends Character{
     public Mage(String nameInput) {
@@ -11,6 +11,10 @@ public class Mage extends Character{
 	defense = 100;
 	attack = 0.4;
 }
+	public String about(){
+		return "You are a mage, intelligent and mysterious. Your priority weapon is a staff.";
+	}
+
     public void normalize(){
 	this.defense *= 2;
 	this.attack /= 2;

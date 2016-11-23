@@ -1,7 +1,7 @@
 /* You DED: Dasha, Edward, Dima
 APCS1 pd4
-HW #32: Ye Olde Role Playing Game, Expanded
-2016-20-16  
+HW #34: Ye Olde Role Playing Game, Unchained
+2016-22-16  
 */
 public class Rogue extends Character{
     public Rogue(String nameInput) {
@@ -11,11 +11,14 @@ public class Rogue extends Character{
 	defense = 80;
 	attack = 0.9;
 }
-        public void normalize(){
-	this.defense *= 2;
-	this.attack /= 2;
+    public void normalize(){
+		this.defense *= 2;
+		this.attack /= 2;
     }
-    
+ 	public String about(){
+		return "You are a rogue, quick and agile. Your priority weapon is a bow.";
+	}
+   
 
     public static void main(String[] args) {
         

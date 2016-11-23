@@ -80,7 +80,6 @@ public class YoRPG
 	else{
 		classChoice = "Pineapple";
 	}
-	System.out.print( Character.about(classChoice));
 	
 	s = "\nIntrepid adventurer, what doth thy call thyself? (State your name): ";
 	System.out.print( s );
@@ -120,7 +119,7 @@ public class YoRPG
 	else{
 		pat = new Pineapple( name );
 	}
-
+	System.out.print( pat.about());
 
     }//end newGame()
 

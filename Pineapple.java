@@ -1,7 +1,7 @@
 /* You DED: Dasha, Edward, Dima
 APCS1 pd4
-HW #32: Ye Olde Role Playing Game, Expanded
-2016-20-16  
+HW #34: Ye Olde Role Playing Game, Unchained
+2016-22-16  
 */
 public class Pineapple extends Character{
     public Pineapple(String nameInput) {
@@ -11,10 +11,14 @@ public class Pineapple extends Character{
 	defense = 300;
 	attack = 0.1;
 }
-        public void normalize(){
-	this.defense *= 2;
-	this.attack /= 2;
+    public void normalize(){
+		this.defense *= 2;
+		this.attack /= 2;
     }
+	public String about(){
+		return "You are a pineapple, strong and wise. Your priority weapon is your stem.";
+	}
+
 
     public static void main(String[] args) {
         

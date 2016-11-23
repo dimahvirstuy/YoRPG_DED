@@ -1,7 +1,7 @@
 /* You DED: Dasha, Edward, Dima
 APCS1 pd4
-HW #32: Ye Olde Role Playing Game, Expanded
-2016-20-16  
+HW #34: Ye Olde Role Playing Game, Unchained
+2016-22-16  
 */
 public abstract class Character {
     protected String name;
@@ -18,7 +18,7 @@ public abstract class Character {
 	this.defense /= 2;
 	this.attack *= 2;
     }
-    //normalizes the settings for warrior
+    //normalizes the settings for character
     public abstract void normalize();
     //checks if alive
     public boolean isAlive(){
@@ -39,27 +39,8 @@ public abstract class Character {
 	swag.lowerHP(damage);
 	return damage;
     }
-    public static String about(String charPlaying) {
-		if (charPlaying == "Warrior"){
-			return "You are a warrior, selfless and brave. Your priority weapon is a sword.";
-		}
-		else if (charPlaying == "Monster"){
-			return "A monster is terrifying and scary.";
-		}
-		else if (charPlaying == "Rogue"){
-			return "You are a rogue, quick and agile. Your priority weapon is a bow.";
-		}
-		else if(charPlaying == "Mage"){
-			return "You are a mage, intelligent and mysterious. Your priority weapon is a staff.";
-		}
-		else if(charPlaying == "Cat"){
-			return "You are a cat, lazy and annoying. Your priority weapon is falling asleep and not doing anything.";
-		}
-		else{
-			return "You are a pineapple, strong and wise. Your priority weapon is your stem.";
-		}
-	}
-	
+	//abstract method. in each of subclasses about writes a short description of the class of the character you choose.
+    public abstract String about();
 public static void main(String[] args) {
 }
 
