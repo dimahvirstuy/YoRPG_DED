@@ -14,12 +14,11 @@ public abstract class Character {
 	return this.name;
     }
     //uses the special attack
-    public void specialize(){
-	this.defense /= 2;
-	this.attack *= 2;
-    }
+    public abstract void specialize();
+    
     //normalizes the settings for character
     public abstract void normalize();
+    
     //checks if alive
     public boolean isAlive(){
 	return this.health>=1;
