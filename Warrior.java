@@ -9,16 +9,24 @@ public class Warrior extends Character{
 	health = 125;
 	strength = 100;
 	defense = 40;
-	attack = 0.4;}
+	attack = 0.4;
+    }
+
+    private static final int defaultDefense = 40;
+    private static final double defaultAttack = 0.4;
+
     public String about(){
 	return "You are a warrior, selfless and brave. Your priority weapon is a sword.";
     }
-    public void normalize(){
-	this.defense *= 2;
-	this.attack /= 2;
+
+    public void specialize() {
+	defense -= (int) ( Math.random() * 6 + 5 );
+	attack *= ( Math.random() + 3 ) / 2 + 0.1;
     }
 
-    public void specialize () {
+    public void normalize() {
+	this.defense = defaultDefense;
+	this.attack = defaultAttack;
     }
 
     public static void main(String[] args) {
