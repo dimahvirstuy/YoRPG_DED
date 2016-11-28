@@ -10,13 +10,13 @@ public class Cat extends Character{
 	strength = 10;
 	defense = 40;
 	attack = 1;
-}
-        private static final int defaultDefense = 40;
+    }
+    private static final int defaultDefense = 40;
     private static final double defaultAttack = 1;
     
     public void normalize(){
-		this.defense = defaultDefense;
-		this.attack = defaultAttack;
+	this.defense = defaultDefense;
+	this.attack = defaultAttack;
     }
 
     public void specialize() {
@@ -26,12 +26,12 @@ public class Cat extends Character{
 	    defense += 10000000;
 	}
 	else {
-	    health = -5;
+	    health = -50;
 		}
     }
 
 	public String about(){
-		return "You are a cat, lazy and annoying. Your priority weapon is falling asleep and not doing anything.";
+		return "You are a cat, lazy and annoying. Your primary weapon is falling asleep and not doing anything.";
 	}
 
     public static void main(String[] args) {

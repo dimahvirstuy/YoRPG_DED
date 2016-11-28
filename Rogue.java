@@ -12,7 +12,7 @@ public class Rogue extends Character{
 	attack = 1;
     }
 
-        private static final int defaultDefense = 40;
+    private static final int defaultDefense = 40;
     private static final double defaultAttack = 1;
 
     public void normalize(){
@@ -33,7 +33,7 @@ public class Rogue extends Character{
     }
 
     public String about(){
-	return "You are a rogue, quick and agile. Your priority weapon is a bow.";
+	return "You are a rogue, quick and agile. Your primary weapon is a dagger.";
     }
    
 

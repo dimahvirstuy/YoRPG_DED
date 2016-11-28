@@ -16,7 +16,7 @@ public class Mage extends Character{
     private static final double defaultAttack = 1;
     
 	public String about(){
-		return "You are a mage, intelligent and mysterious. Your priority weapon is a staff.";
+		return "You are a mage, intelligent and mysterious. Your primary weapon is a tome.";
 	}
 
     public void specialize () {

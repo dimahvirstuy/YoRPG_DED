@@ -22,7 +22,7 @@ public class Pineapple extends Character{
     public void specialize () {
 	normalize();
 	if(0.1 > Math.random()) {
-	    attack += 100;
+	    attack += 1000;
 	}
 	else {defense = 0;
 	    attack *= 2;
@@ -31,7 +31,7 @@ public class Pineapple extends Character{
     }
 
     public String about(){
-	return "You are a pineapple, strong and wise. Your priority weapon is your stem.";
+	return "You are a pineapple, strong and wise. Your primary weapon is your stem.";
     }
 
 

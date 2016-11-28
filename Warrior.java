@@ -16,7 +16,7 @@ public class Warrior extends Character{
     private static final double defaultAttack = 0.4;
 
     public String about(){
-	return "You are a warrior, selfless and brave. Your priority weapon is a sword.";
+	return "You are a warrior, selfless and brave. Your primary weapon is a sword.";
     }
 
     public void specialize() {
