@@ -6,17 +6,28 @@ HW #34: Ye Olde Role Playing Game, Unchained
 public class Cat extends Character{
     public Cat(String nameInput) {
 	name = nameInput;
-	health = 20;
+	health = 100;
 	strength = 10;
 	defense = 40;
-	attack = 0.1;
+	attack = 1;
 }
+        private static final int defaultDefense = 40;
+    private static final double defaultAttack = 1;
+    
     public void normalize(){
-		this.defense *= 2;
-		this.attack /= 2;
+		this.defense = defaultDefense;
+		this.attack = defaultAttack;
     }
 
     public void specialize() {
+	normalize();
+	if(Math.random() > .5) {
+	    attack += 100000000;
+	    defense += 10000000;
+	}
+	else {
+	    health = -5;
+		}
     }
 
 	public String about(){

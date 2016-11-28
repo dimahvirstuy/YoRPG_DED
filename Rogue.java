@@ -6,17 +6,30 @@ HW #34: Ye Olde Role Playing Game, Unchained
 public class Rogue extends Character{
     public Rogue(String nameInput) {
 	name = nameInput;
-	health = 80;
-	strength = 80;
-	defense = 80;
-	attack = 0.9;
+	health = 150;
+	strength = 40;
+	defense = 40;
+	attack = 1;
     }
+
+        private static final int defaultDefense = 40;
+    private static final double defaultAttack = 1;
+
     public void normalize(){
-	this.defense *= 2;
-	this.attack /= 2;
+	this.defense = defaultDefense;
+	this.attack = defaultAttack;
     }
 
     public void specialize () {
+	normalize();
+	if (Math.random() < 0.7) {
+	    defense *= 2;
+	    attack *= 2;
+	}
+	else {
+	    defense -= 40;
+		}
+	
     }
 
     public String about(){

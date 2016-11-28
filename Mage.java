@@ -6,21 +6,28 @@ HW #34: Ye Olde Role Playing Game, Unchained
 public class Mage extends Character{
     public Mage(String nameInput) {
 	name = nameInput;
-	health = 110;
-	strength = 30;
-	defense = 100;
-	attack = 0.4;
+	health = 150;
+	strength = 40;
+	defense = 20;
+	attack = 1;
 }
+
+        private static final int defaultDefense = 50;
+    private static final double defaultAttack = 1;
+    
 	public String about(){
 		return "You are a mage, intelligent and mysterious. Your priority weapon is a staff.";
 	}
 
     public void specialize () {
+	normalize();
+	this.health -= 20;
+	this.attack *= 4;
     }
 
     public void normalize(){
-	this.defense *= 2;
-	this.attack /= 2;
+	this.defense = defaultDefense;
+	this.attack = defaultAttack;
     }
     public static void main(String[] args) {
         

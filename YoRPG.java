@@ -204,6 +204,8 @@ public void playTower(){
 
 		d1 = pat.attack( smaug );
 		d2 = smaug.attack( pat );
+		System.out.println( pat.health );
+		System.out.println( smaug.health );
 
 		System.out.println( "\n" + pat.getName() + " dealt " + d1 +
 				    " points of damage.");

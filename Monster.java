@@ -7,9 +7,9 @@ HW #34: Ye Olde Role Playing Game, Unchained
 public class Monster extends Character{
     public Monster() {
 	health = 150;
-	strength = (int) Math.random() * 45 + 20;
+	strength = (int) Math.random() * 100 + 20;
 	defense = 20;
-	attack = 1;
+	attack = 3;
 	}
 
     public void normalize () {

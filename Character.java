@@ -35,6 +35,8 @@ public abstract class Character {
     public int attack(Character swag){
 	int damage = 0;
 	damage = (int)((this.strength * this.attack) - swag.defense);
+	if (damage < 0) {
+	    return 0;}
 	swag.lowerHP(damage);
 	return damage;
     }

@@ -8,15 +8,26 @@ public class Pineapple extends Character{
 	name = nameInput;
 	health = 400;
 	strength = 80;
-	defense = 300;
+	defense = 100;
 	attack = 0.1;
 }
+    private static final int defaultDefense = 100;
+    private static final double defaultAttack = 0.1;
+    
     public void normalize(){
-		this.defense *= 2;
-		this.attack /= 2;
+		this.defense = defaultDefense;
+		this.attack = defaultAttack;
     }
 
     public void specialize () {
+	normalize();
+	if(0.1 > Math.random()) {
+	    attack += 100;
+	}
+	else {defense = 0;
+	    attack *= 2;
+	}
+	    
     }
 
     public String about(){
