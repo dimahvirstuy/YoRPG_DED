@@ -12,12 +12,14 @@ a forest rumored to be troublesome. For tower, your quest is to defeat a dragon 
 sponsor. In both, you inevitably have to fight.
 ~~~~~~~~~~~~~~~~
 Code restructurings:
--For Storytime, we only had to alter the YoRPG.java file. We had to create an extra two methods; playForest and playTower. 
-These methods just held print statements and for forest, a choosing statement. playTurn wasn't altered at all, only in the 
-main method did we have to account for picking which story mode you're doing using a simple ifelse. In the newGame function
-we had to add a variable which held which storymode the player picked.
-- For specialize, we just had to edit the superclass character and all of its subclasses. We only altered the specialize method
-to fit each character.
+-For Storytime, we only had to alter the YoRPG.java file. We had to create an extra two methods; 
+playForest and playTower. These methods just held print statements and for forest, a choosing 
+statement. playTurn wasn't altered at all, only in the main method did we have to account for 
+picking which story mode you're doing using a simple ifelse. In the newGame function we had to 
+add a variable which held which storymode the player picked.
+- For specialize, we just had to edit the superclass character and all of its subclasses. We 
+only altered the specialize method to fit each character.
+- We fixed the front end so that when a player or monster attacked, it wouldn't show up as negative.
 ~~~~~~~~~~~~~~~~
 Instructions:
 -The instructions are straight to the point. You compile and run and the game asks you questions to which you input the choice.
