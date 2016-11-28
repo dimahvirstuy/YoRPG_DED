@@ -23,7 +23,7 @@ public class YoRPG
     private int difficulty;
 	//classtype holds the int for which character was picked based on line.
 	private int classType;
-
+	private int playMode;
     private InputStreamReader isr;
     private BufferedReader in;
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,6 +50,7 @@ public class YoRPG
     public void newGame() {
 	String classChoice ="";
 	String classThing = "";	
+	String classThing2 = "";	
 	String s;
 	String name = "";
 	classThing += "\nWelcome! Choose your class: \n";
@@ -81,6 +82,7 @@ public class YoRPG
 		classChoice = "Pineapple";
 	}
 	
+	
 	s = "\nIntrepid adventurer, what doth thy call thyself? (State your name): ";
 	System.out.print( s );
 
@@ -88,23 +90,7 @@ public class YoRPG
 	    name = in.readLine();
 	}
 	catch ( IOException e ) { }
-	s = "Welcome to Ye Olde RPG!\n";
-
-	s += "\nChoose your difficulty: \n";
-	s += "\t1: Easy\n";
-	s += "\t2: Not so easy\n";
-	s += "\t3: Beowulf hath nothing on me. Bring it on.\n";
-	s += "Selection: ";
-	System.out.print( s );
-
-	try {
-	    difficulty = Integer.parseInt( in.readLine() );
-	}
-	catch ( IOException e ) { }
-
-
-	//instantiate the player's character
-	if (classChoice == "Warrior"){
+		if (classChoice == "Warrior"){
 		pat = new Warrior( name );
 	}
 	else if (classChoice == "Rogue"){
@@ -120,17 +106,74 @@ public class YoRPG
 		pat = new Pineapple( name );
 	}
 	System.out.print( pat.about());
+	s = "Welcome to Ye Olde RPG!\n";
 
+	s += "\nChoose your difficulty: \n";
+	s += "\t1: Easy\n";
+	s += "\t2: Not so easy\n";
+	s += "\t3: Beowulf hath nothing on me. Bring it on.\n";
+	s += "Selection: ";
+	System.out.print( s );
+
+	try {
+	    difficulty = Integer.parseInt( in.readLine() );
+	}
+	catch ( IOException e ) { }
+
+
+	
+	classThing2 += "\nYoung one! You must now pick your journey: \n";
+	classThing2 += "\t1: Forest: Land of the undead.\n";
+	classThing2 += "\t2: Tower: battle of dragons.\n";
+	System.out.print( classThing2 );
+	try {
+	    playMode = Integer.parseInt( in.readLine() );
+	}
+	catch ( IOException e ) { }
+	System.out.println(playMode);
     }//end newGame()
 
+public void playForest(){
+	int i = -1;
+ 	    System.out.println( "\nLo, yo set out on your journey.\n As you're walking," +
+		"you read over the quest scroll you are given. It says: 'Dear hero,\n Thank you for your help! " +
+		"Some young scoundrels stole my knapsack as I was taking a wee walk to the farm and I really need it back. " +
+		"You see, it has all of my tools and I can't afford to buy a new set. Not only that, but I saw the boys run " +
+		"off into the forest! After all the rumors about dangers lurking in there, I can't help but feel afraid for " +
+		"them. Please hurry! - Farmer Joe'\n Just as you finish reading the letter, you come to a crossroads." +
+		"It splits into two paths, one going to the left and the other to the right. Which do you pick?"		);
+	try {
+		    System.out.println( "\t1: Left. \n\t2: Right." );
+		    i = Integer.parseInt( in.readLine() );
+		}
+		catch ( IOException e ) { }
+		if (i ==1){
+		System.out.println("You turn left and keep walking. Suddenly, you bump int something furry. You look up.");}
+		else{
+			System.out.println("You run to the castle and bump into something scaly. You look up.");
+			}
+			
+}
 
+public void playTower(){
+ 	    System.out.println( "\nLo, yo set out on your journey.\n As you're walking," +
+		"you read over the quest scroll you are given. It says: 'Dear hero,\n Thank you for your help! " +
+		"There's a dragon tournament happening today in the Mighty Tower and, being super rich, I have looked " +
+		"far and wide for the right dragonslayer to represent me. The Wizard Council has pointed me to you. I need you " +
+		"win the tournament for me by defeating the dragon. I'll reward you in millions and you'll uphold my status.'\n" +
+		"As you finish reading the letter, you arrive at the tower and clamber up the stairs. You are welcomed into an empty chamber,"+
+		"it seems that no one else has decided to take on this suicide mission except for you. The wall opens and something huge flies out" +
+		"towards you.");
+			
+}
     /*=============================================
-      boolean playTurn -- simulates a round of combat
-      pre:  Warrior pat has been initialized
+      boolean playTurn -- simulates a story mode in forest
+      pre:  Character pat has been initialized
       post: Returns true if player wins (monster dies).
       Returns false if monster wins (player dies).
       =============================================*/
-    public boolean playTurn() {
+
+	public boolean playTurn() {
 
 	int i = 1;
 	int d1, d2;
@@ -138,7 +181,7 @@ public class YoRPG
 	if ( Math.random() >= ( difficulty / 3.0 ) )
 	    System.out.println( "\nNothing to see here. Move along!" );
 	else {
-	    System.out.println( "\nLo, yonder monster approacheth!" );
+	    System.out.println( "\nLo, it's a hideous monster!" );
 
 	    smaug = new Monster();
 
@@ -198,18 +241,29 @@ public class YoRPG
 
 	//As usual, move the begin-comment bar down as you progressively 
 	//test each new bit of functionality...
-
+	int encounters = 0;
 	//loading...
 	YoRPG game = new YoRPG();
 
-	int encounters = 0;
-
+	//int encounters = 0;
+if (game.playMode == 1){
+	game.playForest();
 	while( encounters < MAX_ENCOUNTERS ) {
 	    if ( !game.playTurn() )
 		break;
 	    encounters++;
 	    System.out.println();
-	}
+	};
+}
+else{
+	game.playTower();
+		while( encounters < MAX_ENCOUNTERS ) {
+	    if ( !game.playTurn() )
+		break;
+	    encounters++;
+	    System.out.println();
+	};
+}
 
 	System.out.println( "Thy game doth be over." );
 	/*================================================
